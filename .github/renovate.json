@@ -20,7 +20,7 @@
         "minor",
         "patch"
       ],
-      "excludePackagePatters": ["^typeorm$"],
+      "excludePackageNames": ["typeorm"],
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch"
     }

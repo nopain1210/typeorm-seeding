@@ -3,7 +3,6 @@
     "config:base",
     ":assignAndReview(jorgebodega)",
     ":automergeDisabled",
-    ":disableDependencyDashboard",
     ":semanticCommits",
     ":semanticCommitScopeDisabled",
     ":separatePatchReleases",

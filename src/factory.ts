@@ -1,19 +1,22 @@
 import type { SaveOptions } from 'typeorm'
-import { fetchConnection } from './connection'
+import { fetchDataSource } from './datasource'
 import { InstanceAttribute } from './instanceAttribute'
 import { LazyInstanceAttribute } from './lazyInstanceAttribute'
 import { Subfactory } from './subfactory'
 import type { Constructable, FactorizedAttrs } from './types'
 
+/**
+ * @deprecated Starting from v6, this class is moved to [typeorm-factory](https://github.com/jorgebodega/typeorm-factory)
+ */
 export abstract class Factory<T> {
   protected abstract entity: Constructable<T>
-  protected abstract attrs: FactorizedAttrs<T>
+  protected abstract attrs(): FactorizedAttrs<T>
 
   /**
    * Make a new entity without persisting it
    */
   async make(overrideParams: Partial<FactorizedAttrs<T>> = {}): Promise<T> {
-    const attrs = { ...this.attrs, ...overrideParams }
+    const attrs = { ...this.attrs(), ...overrideParams }
 
     const entity = await this.makeEntity(attrs, false)
     await this.applyLazyAttributes(entity, attrs, false)
@@ -36,12 +39,12 @@ export abstract class Factory<T> {
    * Create a new entity and persist it
    */
   async create(overrideParams: Partial<FactorizedAttrs<T>> = {}, saveOptions?: SaveOptions): Promise<T> {
-    const attrs = { ...this.attrs, ...overrideParams }
+    const attrs = { ...this.attrs(), ...overrideParams }
     const preloadedAttrs = Object.entries(attrs).filter(([, value]) => !(value instanceof LazyInstanceAttribute))
 
     const entity = await this.makeEntity(Object.fromEntries(preloadedAttrs) as FactorizedAttrs<T>, true)
 
-    const em = (await fetchConnection()).createEntityManager()
+    const em = fetchDataSource().createEntityManager()
     const savedEntity = await em.save<T>(entity, saveOptions)
 
     await this.applyLazyAttributes(savedEntity, attrs, true)

@@ -1,39 +1,25 @@
-import type { Connection } from 'typeorm'
-import { configureConnection, fetchConnection, Seeder } from '../src'
-import { Country } from './entities/Country.entity'
-import { Pet } from './entities/Pet.entity'
-import { User } from './entities/User.entity'
-import { UserSeeder } from './seeders/User.seeder'
+import { Seeder, useDataSource } from '../src'
+import { dataSource } from './fixtures/dataSource'
+import { User } from './fixtures/User.entity'
+import UserSeeder from './fixtures/User.seeder'
 
 describe(Seeder, () => {
-  let connection: Connection
-
-  beforeEach(async () => {
-    configureConnection({ connection: 'memory' })
-    connection = await fetchConnection()
-
-    await connection.synchronize()
+  beforeAll(async () => {
+    await useDataSource(dataSource, { synchronize: true }, true)
   })
 
-  afterEach(async () => {
-    await connection.dropDatabase()
-    await connection.close()
+  afterAll(async () => {
+    await dataSource.destroy()
   })
 
-  describe(Seeder.prototype.run, () => {
+  describe('run', () => {
     test('Should seed users', async () => {
-      await new UserSeeder().run(connection)
+      await new UserSeeder().run()
 
-      const em = connection.createEntityManager()
-      const [totalUsers, totalPets, totalCountries] = await Promise.all([
-        em.count(User),
-        em.count(Pet),
-        em.count(Country),
-      ])
+      const em = dataSource.createEntityManager()
+      const [totalUsers] = await Promise.all([em.count(User)])
 
-      expect(totalUsers).toBe(20)
-      expect(totalPets).toBe(10)
-      expect(totalCountries).toBe(20)
+      expect(totalUsers).toBe(1)
     })
   })
 })

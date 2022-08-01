@@ -5,6 +5,9 @@ import { LazyInstanceAttribute } from './lazyInstanceAttribute'
 import { Subfactory } from './subfactory'
 import type { Constructable, FactorizedAttrs } from './types'
 
+/**
+ * @deprecated Starting from v6, this class is moved to [typeorm-factory](https://github.com/jorgebodega/typeorm-factory)
+ */
 export abstract class Factory<T> {
   protected abstract entity: Constructable<T>
   protected abstract attrs(): FactorizedAttrs<T>

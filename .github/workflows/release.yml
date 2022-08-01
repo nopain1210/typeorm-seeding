@@ -24,10 +24,3 @@ jobs:
         with:
           semantic_version: 19
           dry_run: ${{ github.event.inputs.dry-run }}
-      - name: Archive logs artifacts
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: npm-logs
-          path: |
-              /home/runner/.npm

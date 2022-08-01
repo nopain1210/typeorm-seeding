@@ -1,3 +1,10 @@
+# [5.0.0-next.2](https://github.com/jorgebodega/typeorm-seeding/compare/v5.0.0-next.1...v5.0.0-next.2) (2022-08-01)
+
+
+### Bug Fixes
+
+* add factory deprecation notice ([8d75e05](https://github.com/jorgebodega/typeorm-seeding/commit/8d75e05e43b35e770f7c14437a1e6b04c8fffd01))
+
 # [5.0.0-next.1](https://github.com/jorgebodega/typeorm-seeding/compare/v4.0.0...v5.0.0-next.1) (2022-07-13)
 
 

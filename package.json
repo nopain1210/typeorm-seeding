@@ -1,6 +1,6 @@
 {
   "name": "@jorgebodega/typeorm-seeding",
-  "version": "5.0.0",
+  "version": "5.0.1-next.1",
   "keywords": [
     "typeorm",
     "seed",

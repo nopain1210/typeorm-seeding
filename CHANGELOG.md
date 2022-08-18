@@ -1,3 +1,10 @@
+## [5.0.1](https://github.com/jorgebodega/typeorm-seeding/compare/v5.0.0...v5.0.1) (2022-08-18)
+
+
+### Bug Fixes
+
+* no application seeds ([30f82f6](https://github.com/jorgebodega/typeorm-seeding/commit/30f82f6c3f3c5c249ed32c78452f066cc7c1ab06))
+
 ## [5.0.1-next.1](https://github.com/jorgebodega/typeorm-seeding/compare/v5.0.0...v5.0.1-next.1) (2022-08-17)
 
 

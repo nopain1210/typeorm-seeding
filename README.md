@@ -54,12 +54,9 @@
     - [Subfactory](#subfactory)
   - [make & makeMany](#make--makemany)
   - [create & createMany](#create--createmany)
-  - [faker](#faker)
 - [Seeder](#seeder-1)
   - [run](#run)
-  - [call](#call)
 - [CLI](#cli-configuration)
-  - [config](#config)
   - [seed](#seed)
 - [Testing features](#testing-features)
 
@@ -72,6 +69,7 @@ After that install the extension with `npm` or `yarn`. Add development flag if y
 ```bash
 npm i [-D] @jorgebodega/typeorm-seeding
 yarn add [-D] @jorgebodega/typeorm-seeding
+pnpm add [-D] @jorgebodega/typeorm-seeding
 ```
 
 ## Configuration
@@ -341,23 +339,6 @@ new UserFactory().create({ email: 'other@mail.com' }, { listeners: false })
 new UserFactory().createMany(10, { email: 'other@mail.com' }, { listeners: false })
 ```
 
-## faker
-
-[Faker](https://github.com/faker-js/faker) package has been removed from `dependencies`. If you want to use it, please install it manually and just import when needed.
-
-```bash
-npm i [-D] @faker-js/faker
-yarn add [-D] @faker-js/faker
-```
-
-```typescript
-import { faker } from '@faker-js/faker'
-
-class UserFactory extends Factory<User> {
-  ...
-}
-```
-
 # Seeder
 
 Seeder class is how we provide a way to insert data into databases, and could be executed by the command line or by helper method. Is an abstract class with one method to be implemented, and a helper function to run some more seeder sequentially.
@@ -386,16 +367,6 @@ async run(connection: Connection) {
 }
 ```
 
-## `call`
-
-This function allow to run some other seeders in a sequential way.
-
-In order to use seeders from cli command, a default seeder class must be provided as root seeder, working as a tree structure.
-
-<p align="center">
-  <img src="./seeders.png" alt="logo" />
-</p>
-
 # CLI Configuration
 
 There are two possible commands to execute, one to see the current configuration and one to run a seeder.
@@ -414,7 +385,7 @@ Add the following scripts to your `package.json` file to configure them.
 This command execute a seeder, that could be specified as a parameter.
 
 ```bash
-typeorm-seeding seed
+typeorm-seeding seed <path>
 ```
 
 The name of the seeder to execute (either set with the `--seed` option or with default in [configs](#configuration)) must be the seeder's class name, and thus, the seeder must be exported with a named export. Please avoid default export for seeders: it may imply unwanted behavior. (See [\#75](https://github.com/jorgebodega/typeorm-seeding/issues/75)).
@@ -423,10 +394,7 @@ The name of the seeder to execute (either set with the `--seed` option or with d
 
 | Option                 | Default                              | Description                                           |
 | ---------------------- | ------------------------------------ | ----------------------------------------------------- |
-| `--seed` or `-s`       | Default seeder specified config file | Option to specify a seeder class to run individually. |
 | `--dataSource` or `-d` |                                      | Path of the data source                               |
-| `--configName` or `-n` | TypeORM default value                | Name to the TypeORM config file.                      |
-| `--root` or `-r`       | TypeORM default value                | Path to the TypeORM config file.                      |
 
 # Testing features
 
@@ -442,5 +410,20 @@ useSeeders(entrySeeders: ClassConstructor<Seeder> | ClassConstructor<Seeder>[]):
 useSeeders(
   entrySeeders: ClassConstructor<Seeder> | ClassConstructor<Seeder>[],
   customOptions: Partial<ConnectionConfiguration>,
+): Promise<void>
+```
+
+## `useDataSource`
+
+Use specific data source on the factories. If the data source is not initialized when provided, can be initialized with the `forceInitialization` flag.
+
+```typescript
+useDataSource(dataSource: DataSource): Promise<void>
+useDataSource(dataSource: DataSource, overrideOptions: Partial<DataSourceOptions>): Promise<void>
+useDataSource(dataSource: DataSource, forceInitialization: boolean): Promise<void>
+useDataSource(
+  dataSource: DataSource,
+  overrideOptions: Partial<DataSourceOptions>,
+  forceInitialization: boolean,
 ): Promise<void>
 ```

@@ -1,3 +1,10 @@
+# [6.0.0-next.2](https://github.com/jorgebodega/typeorm-seeding/compare/v6.0.0-next.1...v6.0.0-next.2) (2022-08-22)
+
+
+### Features
+
+* add support for multiple paths on cli ([6ffb5dd](https://github.com/jorgebodega/typeorm-seeding/commit/6ffb5dd00dcb83c06b62a616855b344ab01f2096))
+
 # [6.0.0-next.1](https://github.com/jorgebodega/typeorm-seeding/compare/v5.0.1-next.1...v6.0.0-next.1) (2022-08-18)
 
 

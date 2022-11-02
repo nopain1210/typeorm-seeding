@@ -1,3 +1,44 @@
+# [6.0.0-next.4](https://github.com/jorgebodega/typeorm-seeding/compare/v6.0.0-next.3...v6.0.0-next.4) (2022-11-02)
+
+# [6.0.0-next.3](https://github.com/jorgebodega/typeorm-seeding/compare/v6.0.0-next.2...v6.0.0-next.3) (2022-10-15)
+
+# [6.0.0-next.2](https://github.com/jorgebodega/typeorm-seeding/compare/v6.0.0-next.1...v6.0.0-next.2) (2022-08-22)
+
+
+### Features
+
+* add support for multiple paths on cli ([6ffb5dd](https://github.com/jorgebodega/typeorm-seeding/commit/6ffb5dd00dcb83c06b62a616855b344ab01f2096))
+
+# [6.0.0-next.1](https://github.com/jorgebodega/typeorm-seeding/compare/v5.0.1-next.1...v6.0.0-next.1) (2022-08-18)
+
+
+### chore
+
+* remove factory definitions ([f2ede7c](https://github.com/jorgebodega/typeorm-seeding/commit/f2ede7c952a106db98ef817e6c9fc34a1a79dd96))
+
+
+### Features
+
+* force major version ([73ade47](https://github.com/jorgebodega/typeorm-seeding/commit/73ade475e1a1f44764d4090b04fe2abf9fcbe61b))
+
+
+### BREAKING CHANGES
+
+* Force version 6
+* remove all factory related code in favor of @jorgebodega/typeorm-factory
+
+## [5.0.1-next.2](https://github.com/jorgebodega/typeorm-seeding/compare/v5.0.1-next.1...v5.0.1-next.2) (2022-08-18)
+
+
+### chore
+
+* remove factory definitions ([f2ede7c](https://github.com/jorgebodega/typeorm-seeding/commit/f2ede7c952a106db98ef817e6c9fc34a1a79dd96))
+
+
+### BREAKING CHANGES
+
+* remove all factory related code in favor of @jorgebodega/typeorm-factory
+
 ## [5.0.2](https://github.com/jorgebodega/typeorm-seeding/compare/v5.0.1...v5.0.2) (2022-09-05)
 
 

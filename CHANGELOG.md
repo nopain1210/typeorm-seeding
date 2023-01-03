@@ -1,3 +1,5 @@
+## [6.0.1](https://github.com/jorgebodega/typeorm-seeding/compare/v6.0.0...v6.0.1) (2023-01-03)
+
 # [6.0.0-next.5](https://github.com/jorgebodega/typeorm-seeding/compare/v6.0.0-next.4...v6.0.0-next.5) (2023-01-03)
 
 

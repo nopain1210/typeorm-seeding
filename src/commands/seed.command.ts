@@ -37,7 +37,7 @@ async function run(paths: string[]) {
     spinner.succeed('Seeder imported')
   } catch (error: any) {
     spinner.fail('Could not load seeders!')
-    throw new SeederImportationError('Could not load seeders!', { cause: error })
+    throw new SeederImportationError('Could not load default seeders!', { cause: error })
   }
 
   spinner.info(`Executing seeders...`)

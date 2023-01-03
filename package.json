@@ -1,42 +1,19 @@
 {
-  "name": "@jorgebodega/typeorm-seeding",
-  "version": "6.0.0",
-  "keywords": [
-    "typeorm",
-    "seed",
-    "seeding",
-    "orm"
-  ],
-  "description": "🌱 A delightful way to seed test data into your database.",
-  "license": "MIT",
   "author": "Gery Hirschfeld <gery.hirschfeld@w3tec.ch> (https://github.com/hirsch88)",
-  "contributors": [
-    "Jorge Bodega <jorge.bodega.f@gmail.com> (https://github.com/jorgebodega)"
-  ],
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "bin": {
     "typeorm-seeding": "dist/cli.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jorgebodega/typeorm-seeding.git"
+  "contributors": [
+    "Jorge Bodega <jorge.bodega.f@gmail.com> (https://github.com/jorgebodega)"
+  ],
+  "dependencies": {
+    "chalk": "4.1.2",
+    "commander": "9.4.1",
+    "glob": "8.0.3",
+    "ora": "5.4.1",
+    "tslib": "2.4.1"
   },
-  "scripts": {
-    "build": "tsc --project ./tsconfig.build.json",
-    "format": "prettier --write \"{src,test}/**/*.ts\"",
-    "format:ci": "prettier --check \"{src,test}/**/*.ts\"",
-    "lint": "eslint \"{src,test}/**/*.ts\"",
-    "lint:fix": "pnpm lint --fix",
-    "lint:ci": "pnpm lint",
-    "prebuild": "rimraf dist",
-    "seed:run": "ts-node ./src/cli.ts seed",
-    "test": "jest",
-    "test:ci": "jest --silent",
-    "test:cov": "jest --coverage --silent",
-    "test:watch": "jest --watch",
-    "typecheck": "tsc --noEmit"
-  },
+  "description": "🌱 A delightful way to seed test data into your database.",
   "devDependencies": {
     "@faker-js/faker": "7.6.0",
     "@jorgebodega/typeorm-factory": "1.3.0",
@@ -58,17 +35,41 @@
     "typeorm": "0.3.11",
     "typescript": "4.9.4"
   },
-  "dependencies": {
-    "chalk": "4.1.2",
-    "commander": "9.4.1",
-    "glob": "8.0.3",
-    "ora": "5.4.1",
-    "tslib": "2.4.1"
+  "engines": {
+    "node": ">=14"
   },
+  "keywords": [
+    "typeorm",
+    "seed",
+    "seeding",
+    "orm"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "name": "@jorgebodega/typeorm-seeding",
+  "packageManager": "pnpm@7.21.0",
   "peerDependencies": {
     "typeorm": "^0.3.0"
   },
-  "engines": {
-    "node": ">=14"
-  }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jorgebodega/typeorm-seeding.git"
+  },
+  "scripts": {
+    "build": "tsc --project ./tsconfig.build.json",
+    "format": "prettier --write \"{src,test}/**/*.ts\"",
+    "format:ci": "prettier --check \"{src,test}/**/*.ts\"",
+    "lint": "eslint \"{src,test}/**/*.ts\"",
+    "lint:fix": "pnpm lint --fix",
+    "lint:ci": "pnpm lint",
+    "prebuild": "rimraf dist",
+    "seed:run": "ts-node ./src/cli.ts seed",
+    "test": "jest",
+    "test:ci": "jest --silent",
+    "test:cov": "jest --coverage --silent",
+    "test:watch": "jest --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "types": "dist/index.d.ts",
+  "version": "6.0.0"
 }

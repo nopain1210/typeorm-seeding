@@ -102,6 +102,16 @@ class UserSeeder extends Seeder {
 }
 ```
 
+This seeder class must be exported as default to be handled by the CLI.
+
+```typescript
+export default class UserSeeder extends Seeder {
+  async run(dataSource: DataSource) {
+    ...
+  }
+}
+```
+
 ## `run`
 
 This function is the one that needs to be defined when extending the class.

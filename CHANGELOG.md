@@ -1,3 +1,10 @@
+# [6.0.0-next.5](https://github.com/jorgebodega/typeorm-seeding/compare/v6.0.0-next.4...v6.0.0-next.5) (2023-01-03)
+
+
+### Bug Fixes
+
+* glob pattern on Windows ([1246b1c](https://github.com/jorgebodega/typeorm-seeding/commit/1246b1c5683419086b59b1e44bcec3e8f2af05d3))
+
 # [6.0.0](https://github.com/jorgebodega/typeorm-seeding/compare/v5.0.2...v6.0.0) (2022-11-02)
 
 

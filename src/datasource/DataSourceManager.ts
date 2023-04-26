@@ -3,7 +3,7 @@ import { DataSourceNotProvidedError } from '../errors'
 
 export class DataSourceManager {
   private static _instance: DataSourceManager
-  private _dataSource?: DataSource
+  private _dataSource: DataSource | undefined
 
   static getInstance() {
     if (!DataSourceManager._instance) {

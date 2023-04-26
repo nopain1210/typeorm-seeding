@@ -1,7 +1,7 @@
 import type { DataSource } from 'typeorm'
 import { CommandUtils as TypeormCommandUtils } from 'typeorm/commands/CommandUtils'
 import { Seeder } from '../seeder'
-import { Constructable } from '../types'
+import type { Constructable } from '../types'
 
 export class CommandUtils {
   static async loadDataSource(dataSourceFilePath: string): Promise<DataSource> {

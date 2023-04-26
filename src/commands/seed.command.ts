@@ -1,18 +1,18 @@
 import { resolve } from 'node:path'
 import { Command } from 'commander'
 import ora from 'ora'
-import { DataSource } from 'typeorm'
+import type { DataSource } from 'typeorm'
 import { SeederImportationError } from '../errors'
 import { DataSourceImportationError } from '../errors/DataSourceImportationError'
 import { SeederExecutionError } from '../errors/SeederExecutionError'
 import { useDataSource, useSeeders } from '../helpers'
-import { Seeder } from '../seeder'
-import { Constructable, SeedCommandArguments } from '../types'
+import type { Seeder } from '../seeder'
+import type { Constructable, SeedCommandArguments } from '../types'
 import { calculateFilePath, CommandUtils } from '../utils'
 
 async function run(paths: string[]) {
   const opts = seedCommand.opts<SeedCommandArguments>()
-  const spinner = ora({ isSilent: process.env.NODE_ENV === 'test' }).start()
+  const spinner = ora({ isSilent: process.env['NODE_ENV'] === 'test' }).start()
 
   spinner.start('Loading datasource')
   let dataSource!: DataSource

@@ -1,3 +1,10 @@
+# [7.0.0-next.2](https://github.com/jorgebodega/typeorm-seeding/compare/v7.0.0-next.1...v7.0.0-next.2) (2024-02-28)
+
+
+### Bug Fixes
+
+* update dependency commander to v12 ([12a46b1](https://github.com/jorgebodega/typeorm-seeding/commit/12a46b1f791755b8d57d3a1ecd3bd984984566d9))
+
 # [7.0.0-next.1](https://github.com/jorgebodega/typeorm-seeding/compare/v6.0.1...v7.0.0-next.1) (2023-10-30)
 
 

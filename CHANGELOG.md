@@ -1,3 +1,5 @@
+# [7.0.0-next.3](https://github.com/jorgebodega/typeorm-seeding/compare/v7.0.0-next.2...v7.0.0-next.3) (2024-03-18)
+
 # [7.0.0-next.2](https://github.com/jorgebodega/typeorm-seeding/compare/v7.0.0-next.1...v7.0.0-next.2) (2024-02-28)
 
 

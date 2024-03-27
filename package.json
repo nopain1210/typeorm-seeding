@@ -46,14 +46,14 @@
   ],
   "license": "MIT",
   "main": "dist/index.js",
-  "name": "@jorgebodega/typeorm-seeding",
+  "name": "@trancong12102/typeorm-seeding",
   "packageManager": "pnpm@8.15.5",
   "peerDependencies": {
     "typeorm": "^0.3.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jorgebodega/typeorm-seeding.git"
+    "url": "https://github.com/nopain1210/typeorm-seeding.git"
   },
   "scripts": {
     "build": "tsc --project ./tsconfig.build.json",

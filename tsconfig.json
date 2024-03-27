@@ -16,7 +16,7 @@
     "lib": [
       "es2023"
     ],
-    "module": "es2022",
+    "module": "CommonJS",
     "moduleResolution": "Node",
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
